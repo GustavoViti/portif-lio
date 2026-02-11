@@ -201,6 +201,17 @@ p {
   color: var(--accent);
 }
 
+.btn.cv {
+  background: transparent;
+  border: 1px solid var(--accent-2);
+  color: var(--accent-2);
+}
+
+.btn.cv:hover {
+  background: var(--accent-2);
+  color: white;
+}
+
 
 footer {
   padding: 40px 10%;
