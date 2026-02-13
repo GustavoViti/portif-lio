@@ -11,19 +11,19 @@
 
   <header class="navbar">
   <div class="nav-container">
-    <div class="logo"><a href="#home"><img src="assets/image/VITI_transparente.png" alt=""></a></div>
+    <div class="logo reveal"><a href="#home"><img src="assets/image/VITI_transparente.png" alt=""></a></div>
 
     <nav>
-      <a href="#home">Início</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
+      <a href="#home" class="reveal">Início</a>
+      <a href="#sobre" class="reveal">Sobre</a>
+      <a href="#projetos" class="reveal">Projetos</a>
+      <a href="#contato" class="reveal">Contato</a>
     </nav>
   </div>
 </header>
 
 
-<header class="hero">
+<header class="hero reveal">
   <div class="hero-content">
     
     <div class="hero-text">
@@ -73,7 +73,7 @@
 
     <div class="about-cards">
 
-      <div class="about-card">
+      <div class="about-card reveal">
         <div class="about-icon">
           <!-- Ícone: Graduation cap -->
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
@@ -85,7 +85,7 @@
         <p>Análise e Desenvolvimento de Sistemas (ADS) — em andamento.</p>
       </div>
 
-      <div class="about-card">
+      <div class="about-card reveal">
         <div class="about-icon">
           <!-- Ícone: Target -->
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
@@ -97,7 +97,7 @@
         <p>Conquistar uma vaga Júnior e crescer com base sólida (sem atropelar etapas).</p>
       </div>
 
-      <div class="about-card">
+      <div class="about-card reveal">
         <div class="about-icon">
           <!-- Ícone: Sparkles -->
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
@@ -120,7 +120,7 @@
   <div class="stacks-grid">
 
     <!-- Frontend -->
-    <div class="stack-card">
+    <div class="stack-card reveal">
       <div class="stack-icon">
         <!-- Ícone: Code -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
@@ -132,7 +132,7 @@
     </div>
 
     <!-- Backend -->
-    <div class="stack-card">
+    <div class="stack-card reveal">
       <div class="stack-icon">
         <!-- Ícone: Server -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
@@ -144,7 +144,7 @@
     </div>
 
     <!-- Mobile -->
-    <div class="stack-card">
+    <div class="stack-card reveal">
       <div class="stack-icon">
         <!-- Ícone: Smartphone -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
@@ -156,7 +156,7 @@
     </div>
 
     <!-- Git -->
-    <div class="stack-card">
+    <div class="stack-card reveal">
       <div class="stack-icon">
         <!-- Ícone: Git Branch -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
@@ -179,7 +179,7 @@
 
   <div class="projects-grid">
 
-    <div class="project-card">
+    <div class="project-card reveal">
       <img src="assets/image/VITI TRAINIG.png" alt="Sistema de Produtos">
       <div class="project-content">
         <h4>Viti Training</h4>
@@ -200,7 +200,7 @@
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card reveal">
       <img src="assets/image/stockup.png" alt="Sistema de Produtos">
       <div class="project-content">
         <h4>StockUp</h4>
@@ -338,6 +338,28 @@ const sobre = document.querySelector("#sobre");
     section.style.setProperty("--y", e.clientY - rect.top + "px");
   });
 });
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+
+      const parent = entry.target.parentElement;
+      const siblings = parent.querySelectorAll(".reveal");
+
+      siblings.forEach((el, index) => {
+        el.style.setProperty("--delay", `${index * 120}ms`);
+        observer.unobserve(el);
+      });
+
+      siblings.forEach(el => el.classList.add("show"));
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach(el => {
+  observer.observe(el);
+});
+  reveals.forEach(el => io.observe(el));
 
 </script>
 

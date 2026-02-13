@@ -541,3 +541,31 @@ footer {
   height: 22px;
   color: #a78bfa; /* roxo suave */
 }
+
+/* ===== Reveal Base ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(6px);
+  transition: opacity 700ms ease, 
+              transform 700ms ease, 
+              filter 700ms ease;
+  transition-delay: var(--delay, 0ms);
+  will-change: opacity, transform, filter;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Direções opcionais */
+.reveal-left { transform: translateX(-20px); }
+.reveal-right { transform: translateX(20px); }
+
+.reveal-left.show,
+.reveal-right.show {
+  transform: translateX(0);
+}
+
