@@ -18,8 +18,6 @@ Construindo aplicações modernas, performáticas e bem estruturadas.
   <img src="assets/image/preview.png" alt="Preview do Portfólio" width="800"/>
 </p>
 
-> ⚠️ Dica: Tire um print bonito da home e salve como `preview.png` dentro de `assets/image`.
-
 ---
 
 ## 🧠 Sobre o Projeto
