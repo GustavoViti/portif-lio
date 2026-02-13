@@ -309,10 +309,9 @@ footer {
   color: var(--accent);
 }
 
-.logo {
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: var(--accent);
+
+.logo a img{
+  height: 60px;
 }
 
 .navbar nav a {
