@@ -1,368 +1,564 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Charset padrão para suportar acentos e caracteres PT-BR -->
   <meta charset="UTF-8">
+
+  <!-- Responsividade: garante que o layout se adapte bem ao mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título da aba / SEO básico -->
   <title>Gustavo Viti | Desenvolvedor</title>
+
+  <!-- CSS principal do projeto -->
   <link rel="stylesheet" href="style/style.css">
+
+  <!-- Fonte usada no site (Inter) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
+  <!-- ==========================================================
+       NAVBAR FIXA
+       - Fica no topo com blur
+       - Links para âncoras (#home, #sobre, #projetos, #contato)
+       - Classe "active" é aplicada via JS conforme o scroll (scroll spy)
+  =========================================================== -->
   <header class="navbar">
-  <div class="nav-container">
-    <div class="logo reveal"><a href="#home"><img src="assets/image/VITI_transparente.png" alt=""></a></div>
+    <div class="nav-container">
 
-    <nav>
-      <a href="#home" class="reveal">Início</a>
-      <a href="#sobre" class="reveal">Sobre</a>
-      <a href="#projetos" class="reveal">Projetos</a>
-      <a href="#contato" class="reveal">Contato</a>
-    </nav>
-  </div>
-</header>
+      <!-- Logo clicável que leva para o topo (home) -->
+      <div class="logo reveal">
+        <a href="#home">
+          <img src="assets/image/VITI_transparente.png" alt="">
+        </a>
+      </div>
+
+      <!-- Navegação principal (âncoras) -->
+      <nav>
+        <a href="#home" class="reveal">Início</a>
+        <a href="#sobre" class="reveal">Sobre</a>
+        <a href="#projetos" class="reveal">Projetos</a>
+        <a href="#contato" class="reveal">Contato</a>
+      </nav>
+
+    </div>
+  </header>
 
 
-<header class="hero reveal">
-  <div class="hero-content">
-    
-    <div class="hero-text">
-      <h1>Gustavo Viti</h1>
-      <h2>Desenvolvedor Fullstack & Mobile</h2>
-      <p>
-        Transformo ideias em aplicações escaláveis e performáticas.
-      </p>
+  <!-- ==========================================================
+       HERO (SEÇÃO PRINCIPAL / PRIMEIRA DOBRA)
+       - Apresenta nome + cargo + descrição curta
+       - CTA (botões) para Projetos e Contato
+       - Foto de perfil
+       - Efeito de luz (mouse light) aplicado via CSS/JS na .hero
+  =========================================================== -->
+  <header class="hero reveal">
+    <div class="hero-content">
 
-      <div class="buttons">
-        <a href="#projetos" class="btn">Ver Projetos</a>
-        <a href="#contato" class="btn outline">Contato</a>
+      <!-- Texto de apresentação -->
+      <div class="hero-text">
+        <h1>Gustavo Viti</h1>
+        <h2>Desenvolvedor Fullstack & Mobile</h2>
+
+        <!-- Mini bio curta -->
+        <p>
+          Transformo ideias em aplicações escaláveis e performáticas.
+        </p>
+
+        <!-- Botões CTA -->
+        <div class="buttons">
+          <a href="#projetos" class="btn">Ver Projetos</a>
+          <a href="#contato" class="btn outline">Contato</a>
+        </div>
+      </div>
+
+      <!-- Foto/Avatar -->
+      <div class="hero-image">
+        <img src="assets/image/perfil.png" alt="Sua Foto">
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ==========================================================
+       SEÇÃO SOBRE
+       - Texto + lista de pontos fortes
+       - Cards com: Formação / Objetivo / Destaques
+       - (Obs) Você removeu o efeito de luz aqui, mas o JS ainda
+         está adicionando evento de mouse no #sobre (se quiser manter,
+         ok. Se não quiser, remova o #sobre do array no JS)
+  =========================================================== -->
+  <section id="sobre" class="about">
+    <h3>Sobre</h3>
+
+    <div class="about-grid">
+
+      <!-- Coluna 1: texto e CTA -->
+      <div class="about-text">
+        <h4>Eu sou o Gustavo Viti</h4>
+
+        <!-- Bio um pouco mais completa -->
+        <p>
+          Desenvolvedor Fullstack & Mobile, focado em construir aplicações com visual moderno,
+          código organizado e integração com banco de dados e serviços (Firebase / MySQL).
+        </p>
+
+        <!-- Lista de pontos rápidos (bullet list) -->
+        <ul class="about-list">
+          <li>📌 Foco: Frontend, Node.js e Flutter</li>
+          <li>⚙️ Experiência com APIs REST e integração com banco</li>
+          <li>🚀 Construindo projetos reais e evoluindo continuamente</li>
+        </ul>
+
+        <!-- CTAs da seção Sobre -->
+        <div class="about-actions">
+          <a href="#projetos" class="btn small">Ver Projetos</a>
+          <a href="#contato" class="btn outline small">Falar comigo</a>
+        </div>
+      </div>
+
+      <!-- Coluna 2: cards com informações resumidas -->
+      <div class="about-cards">
+
+        <!-- Card 1: Formação -->
+        <div class="about-card reveal">
+          <div class="about-icon">
+            <!-- Ícone inline (SVG) - "Graduation cap" -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 12v5c0 1.657 2.239 3 5 3s5-1.343 5-3v-5"/>
+            </svg>
+          </div>
+          <h5>Formação</h5>
+          <p>Análise e Desenvolvimento de Sistemas (ADS) — em andamento.</p>
+        </div>
+
+        <!-- Card 2: Objetivo -->
+        <div class="about-card reveal">
+          <div class="about-icon">
+            <!-- Ícone inline (SVG) - "Target" -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 12m-7 0a7 7 0 1014 0a7 7 0 10-14 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 12l4-4"/>
+            </svg>
+          </div>
+          <h5>Objetivo</h5>
+          <p>Conquistar uma vaga Júnior e crescer com base sólida (sem atropelar etapas).</p>
+        </div>
+
+        <!-- Card 3: Destaques -->
+        <div class="about-card reveal">
+          <div class="about-icon">
+            <!-- Ícone inline (SVG) - "Sparkles" -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 3l1.5 4.5L11 9l-4.5 1.5L5 15l-1.5-4.5L-1 9l4.5-1.5L5 3z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 7l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z"/>
+            </svg>
+          </div>
+          <h5>Destaques</h5>
+          <p>Projetos com Firebase, Node.js + MySQL, UI dark moderna e deploy online.</p>
+        </div>
+
       </div>
     </div>
-
-    <div class="hero-image">
-      <img src="assets/image/perfil.png" alt="Sua Foto">
-    </div>
-
-  </div>
-</header>
+  </section>
 
 
- <section id="sobre" class="about">
-  <h3>Sobre</h3>
+  <!-- ==========================================================
+       SEÇÃO STACKS (CARDS PREMIUM)
+       - 4 cards: Frontend / Backend / Mobile / Git & GitHub
+       - Cada card tem ícone + título + descrição
+       - Cards usam "reveal" para animação de entrada
+       - Cards têm efeito de "mouse light" (via JS para stack-card)
+  =========================================================== -->
+  <section id="stack" class="stacks">
+    <h3>Stacks</h3>
 
-  <div class="about-grid">
+    <div class="stacks-grid">
 
-    <div class="about-text">
-      <h4>Eu sou o Gustavo Viti</h4>
-      <p>
-        Desenvolvedor Fullstack & Mobile, focado em construir aplicações com visual moderno,
-        código organizado e integração com banco de dados e serviços (Firebase / MySQL).
-      </p>
-
-      <ul class="about-list">
-        <li>📌 Foco: Frontend, Node.js e Flutter</li>
-        <li>⚙️ Experiência com APIs REST e integração com banco</li>
-        <li>🚀 Construindo projetos reais e evoluindo continuamente</li>
-      </ul>
-
-      <div class="about-actions">
-        <a href="#projetos" class="btn small">Ver Projetos</a>
-        <a href="#contato" class="btn outline small">Falar comigo</a>
-      </div>
-    </div>
-
-    <div class="about-cards">
-
-      <div class="about-card reveal">
-        <div class="about-icon">
-          <!-- Ícone: Graduation cap -->
+      <!-- Stack: Frontend -->
+      <div class="stack-card reveal">
+        <div class="stack-icon">
+          <!-- Ícone inline (SVG) - Code -->
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/>
-            <path stroke-linecap="round" stroke-linejoin="round" d="M7 12v5c0 1.657 2.239 3 5 3s5-1.343 5-3v-5"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
           </svg>
         </div>
-        <h5>Formação</h5>
-        <p>Análise e Desenvolvimento de Sistemas (ADS) — em andamento.</p>
+        <h4>Frontend</h4>
+        <p>
+          HTML, CSS e JavaScript com foco em UI moderna, responsiva e micro-interações.
+          Também uso Electron.js para apps desktop.
+        </p>
       </div>
 
-      <div class="about-card reveal">
-        <div class="about-icon">
-          <!-- Ícone: Target -->
+      <!-- Stack: Backend -->
+      <div class="stack-card reveal">
+        <div class="stack-icon">
+          <!-- Ícone inline (SVG) - Server -->
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 12m-7 0a7 7 0 1014 0a7 7 0 10-14 0z"/>
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 12l4-4"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </div>
-        <h5>Objetivo</h5>
-        <p>Conquistar uma vaga Júnior e crescer com base sólida (sem atropelar etapas).</p>
+        <h4>Backend</h4>
+        <p>Node.js + MySQL para APIs REST, CRUD, validações e integrações — com organização e atenção à escalabilidade.</p>
       </div>
 
-      <div class="about-card reveal">
-        <div class="about-icon">
-          <!-- Ícone: Sparkles -->
+      <!-- Stack: Mobile -->
+      <div class="stack-card reveal">
+        <div class="stack-icon">
+          <!-- Ícone inline (SVG) - Smartphone -->
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 3l1.5 4.5L11 9l-4.5 1.5L5 15l-1.5-4.5L-1 9l4.5-1.5L5 3z"/>
-            <path stroke-linecap="round" stroke-linejoin="round" d="M18 7l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 4h4m-6 3h8m-8 14h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
           </svg>
         </div>
-        <h5>Destaques</h5>
-        <p>Projetos com Firebase, Node.js + MySQL, UI dark moderna e deploy online.</p>
+        <h4>Mobile</h4>
+        <p>Flutter com Firebase (Auth/Firestore) para apps com dados dinâmicos, performance e boa experiência de uso.</p>
+      </div>
+
+      <!-- Stack: Git -->
+      <div class="stack-card reveal">
+        <div class="stack-icon">
+          <!-- Ícone inline (SVG) - Git branch -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 3a2 2 0 110 4 2 2 0 010-4zm0 14a2 2 0 110 4 2 2 0 010-4zM18 7a2 2 0 110 4 2 2 0 010-4z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 7v10m0-6c4 0 6-4 12-4"/>
+          </svg>
+        </div>
+        <h4>Git & GitHub</h4>
+        <p>Versionamento com commits limpos, branches, merges e organização do repositório para colaboração e deploy contínuo.</p>
       </div>
 
     </div>
-  </div>
-</section>
+  </section>
 
 
-<section id="stack" class="stacks">
-  <h3>Stacks</h3>
-
-  <div class="stacks-grid">
-
-    <!-- Frontend -->
-    <div class="stack-card reveal">
-      <div class="stack-icon">
-        <!-- Ícone: Code -->
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
-        </svg>
-      </div>
-      <h4>Frontend</h4>
-      <p>HTML, CSS e JavaScript com foco em UI moderna, responsiva e micro-interações. Também uso Electron.js para apps desktop.</p>
-    </div>
-
-    <!-- Backend -->
-    <div class="stack-card reveal">
-      <div class="stack-icon">
-        <!-- Ícone: Server -->
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </div>
-      <h4>Backend</h4>
-      <p>Node.js + MySQL para APIs REST, CRUD, validações e integrações — com organização e atenção à escalabilidade.</p>
-    </div>
-
-    <!-- Mobile -->
-    <div class="stack-card reveal">
-      <div class="stack-icon">
-        <!-- Ícone: Smartphone -->
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M10 4h4m-6 3h8m-8 14h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-        </svg>
-      </div>
-      <h4>Mobile</h4>
-      <p>Flutter com Firebase (Auth/Firestore) para apps com dados dinâmicos, performance e boa experiência de uso.</p>
-    </div>
-
-    <!-- Git -->
-    <div class="stack-card reveal">
-      <div class="stack-icon">
-        <!-- Ícone: Git Branch -->
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 3a2 2 0 110 4 2 2 0 010-4zm0 14a2 2 0 110 4 2 2 0 010-4zM18 7a2 2 0 110 4 2 2 0 010-4z"/>
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 7v10m0-6c4 0 6-4 12-4"/>
-        </svg>
-      </div>
-      <h4>Git & GitHub</h4>
-      <p>Versionamento com commits limpos, branches, merges e organização do repositório para colaboração e deploy contínuo.</p>
-    </div>
-
-  </div>
-</section>
-
-
-
-
+  <!-- ==========================================================
+       SEÇÃO PROJETOS
+       - Cards em grid (2 colunas no desktop, 1 no mobile)
+       - Cada card: imagem, descrição, tags de tech, links
+       - Cards com "reveal" para animação de entrada
+  =========================================================== -->
   <section id="projetos" class="projects">
-  <h2>Projetos em Destaque</h2>
+    <h2>Projetos em Destaque</h2>
 
-  <div class="projects-grid">
+    <div class="projects-grid">
 
-    <div class="project-card reveal">
-      <img src="assets/image/VITI TRAINIG.png" alt="Sistema de Produtos">
-      <div class="project-content">
-        <h4>Viti Training</h4>
-        <p>
-          Aplicativo mobile desenvolvido em Flutter com Firebase...
-        </p>
-        <div class="tech">
-          <span>Flutter</span>
-          <span>Firebase Auth</span>
-          <span>Firestore</span>
-          <span>Mobile Architecture</span>
-          <span>Firebase</span>
-        </div>
-        <div class="project-links">
-          <a href="#" target="_blank">GitHub</a>
-          <a href="#" target="_blank">Demo</a>
+      <!-- Projeto 1: Viti Training -->
+      <div class="project-card reveal">
+        <img src="assets/image/VITI TRAINIG.png" alt="Sistema de Produtos">
+        <div class="project-content">
+          <h4>Viti Training</h4>
+          <p>
+            Aplicativo mobile desenvolvido em Flutter com Firebase...
+          </p>
+
+          <!-- Tags de tecnologia -->
+          <div class="tech">
+            <span>Flutter</span>
+            <span>Firebase Auth</span>
+            <span>Firestore</span>
+            <span>Mobile Architecture</span>
+            <span>Firebase</span>
+          </div>
+
+          <!-- Links do projeto -->
+          <div class="project-links">
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">Demo</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="project-card reveal">
-      <img src="assets/image/stockup.png" alt="Sistema de Produtos">
-      <div class="project-content">
-        <h4>StockUp</h4>
-        <p>
-           Sistema web completo para gestão de estoque, com autenticação,
-      cadastro de produtos e integração com API Node.js e banco MySQL.
-        </p>
-        <div class="tech">
+      <!-- Projeto 2: StockUp -->
+      <div class="project-card reveal">
+        <img src="assets/image/stockup.png" alt="Sistema de Produtos">
+        <div class="project-content">
+          <h4>StockUp</h4>
+          <p>
+            Sistema web completo para gestão de estoque, com autenticação,
+            cadastro de produtos e integração com API Node.js e banco MySQL.
+          </p>
+
+          <!-- Tags de tecnologia -->
+          <div class="tech">
             <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>Node.js</span>
-      <span>MySQL</span>
-      <span>REST API</span>
-        </div>
-        <div class="project-links">
-          <a href="#" target="_blank">GitHub</a>
-          <a href="#" target="_blank">Demo</a>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Node.js</span>
+            <span>MySQL</span>
+            <span>REST API</span>
+          </div>
+
+          <!-- Links do projeto -->
+          <div class="project-links">
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">Demo</a>
+          </div>
         </div>
       </div>
+
+      <!-- Placeholder para próximos projetos -->
+      <div class="project-card">
+        ...
+      </div>
+
     </div>
+  </section>
 
-    <div class="project-card">
-      ...
-    </div>
 
-  </div>
-</section>
-
+  <!-- ==========================================================
+       SEÇÃO CONTATO
+       - Cards clicáveis com ícones SVG
+       - Email, GitHub, LinkedIn, Instagram
+       - Botão/CTA de currículo (Baixar CV)
+  =========================================================== -->
   <section id="contato">
-  <h3>Vamos conversar?</h3>
-  <p class="contact-subtitle">
-    Estou aberto a oportunidades, freelas e novas conexões.
-  </p>
+    <h3>Vamos conversar?</h3>
 
-  <div class="contact-container">
+    <!-- Texto auxiliar -->
+    <p class="contact-subtitle">
+      Estou aberto a oportunidades, freelas e novas conexões.
+    </p>
 
-    <a href="mailto:gustavoviti543@gmail.com" class="contact-card">
-      <div class="icon">
-        <svg viewBox="0 -2.5 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>email [#7c39ed]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-340.000000, -922.000000)" fill="#7c39ed"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M294,774.474 L284,765.649 L284,777 L304,777 L304,765.649 L294,774.474 Z M294.001,771.812 L284,762.981 L284,762 L304,762 L304,762.981 L294.001,771.812 Z" id="email-[#7c39ed]"> </path> </g> </g> </g> </g></svg>
-      </div>
-      <div>
-        <span>Email</span>
-        <p>gustavoviti543@gmail.com</p>
-      </div>
-    </a>
+    <div class="contact-container">
 
-    <a href="https://github.com/GustavoViti" target="_blank" class="contact-card">
-      <div class="icon">
-  <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#7c39ed"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>github [#142]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="#7c39ed"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" id="github-[#142]"> </path> </g> </g> </g> </g></svg>
-</div>
+      <!-- Contato: Email (mailto abre o app de email) -->
+      <a href="mailto:gustavoviti543@gmail.com" class="contact-card">
+        <div class="icon">
+          <!-- SVG do Email -->
+          <svg viewBox="0 -2.5 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>email [#7c39ed]</title>
+              <desc>Created with Sketch.</desc>
+              <defs></defs>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Dribbble-Light-Preview" transform="translate(-340.000000, -922.000000)" fill="#7c39ed">
+                  <g id="icons" transform="translate(56.000000, 160.000000)">
+                    <path d="M294,774.474 L284,765.649 L284,777 L304,777 L304,765.649 L294,774.474 Z M294.001,771.812 L284,762.981 L284,762 L304,762 L304,762.981 L294.001,771.812 Z" id="email-[#7c39ed]"></path>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
 
-      <div>
-        <span>GitHub</span>
-        <p>github.com/GustavoViti</p>
-      </div>
-    </a>
-
-    <a href="https://www.linkedin.com/in/gustavoviti/" target="_blank" class="contact-card">
-      <div class="icon">
-  <svg fill="#7c39ed" viewBox="-5.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>linkedin</title> <path d="M0 8.219v15.563c0 1.469 1.156 2.625 2.625 2.625h15.563c0.719 0 1.406-0.344 1.844-0.781 0.469-0.469 0.781-1.063 0.781-1.844v-15.563c0-1.469-1.156-2.625-2.625-2.625h-15.563c-0.781 0-1.375 0.313-1.844 0.781-0.438 0.438-0.781 1.125-0.781 1.844zM2.813 10.281c0-1 0.813-1.875 1.813-1.875 1.031 0 1.875 0.875 1.875 1.875 0 1.031-0.844 1.844-1.875 1.844-1 0-1.813-0.813-1.813-1.844zM7.844 23.125v-9.531c0-0.219 0.219-0.406 0.375-0.406h2.656c0.375 0 0.375 0.438 0.375 0.719 0.75-0.75 1.719-0.938 2.719-0.938 2.438 0 4 1.156 4 3.719v6.438c0 0.219-0.188 0.406-0.375 0.406h-2.75c-0.219 0-0.375-0.219-0.375-0.406v-5.813c0-0.969-0.281-1.5-1.375-1.5-1.375 0-1.719 0.906-1.719 2.125v5.188c0 0.219-0.219 0.406-0.438 0.406h-2.719c-0.156 0-0.375-0.219-0.375-0.406zM2.875 23.125v-9.531c0-0.219 0.219-0.406 0.375-0.406h2.719c0.25 0 0.406 0.156 0.406 0.406v9.531c0 0.219-0.188 0.406-0.406 0.406h-2.719c-0.188 0-0.375-0.219-0.375-0.406z"></path> </g></svg>
-</div>
-
-      <div>
-        <span>LinkedIn</span>
-        <p>linkedin.com/in/gustavoviti/</p>
-      </div>
-    </a>
-
-    <a href="https://www.instagram.com/gustavo_viti_dev/" target="_blank" class="contact-card">
-      <div class="icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#7c39ed"></path> <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#7c39ed"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#7c39ed"></path> </g></svg>
-      </div>
-      <div>
-        <span>Instagram</span>
-        <p>@gustavo_viti_dev</p>
-      </div>
+        <div>
+          <span>Email</span>
+          <p>gustavoviti543@gmail.com</p>
+        </div>
       </a>
 
+      <!-- Contato: GitHub -->
+      <a href="https://github.com/GustavoViti" target="_blank" class="contact-card">
+        <div class="icon">
+          <!-- SVG do GitHub -->
+          <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#7c39ed">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>github [#142]</title>
+              <desc>Created with Sketch.</desc>
+              <defs></defs>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="#7c39ed">
+                  <g id="icons" transform="translate(56.000000, 160.000000)">
+                    <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" id="github-[#142]"></path>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <div>
+          <span>GitHub</span>
+          <p>github.com/GustavoViti</p>
+        </div>
+      </a>
+
+      <!-- Contato: LinkedIn -->
+      <a href="https://www.linkedin.com/in/gustavoviti/" target="_blank" class="contact-card">
+        <div class="icon">
+          <!-- SVG do LinkedIn -->
+          <svg fill="#7c39ed" viewBox="-5.5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>linkedin</title>
+              <path d="M0 8.219v15.563c0 1.469 1.156 2.625 2.625 2.625h15.563c0.719 0 1.406-0.344 1.844-0.781 0.469-0.469 0.781-1.063 0.781-1.844v-15.563c0-1.469-1.156-2.625-2.625-2.625h-15.563c-0.781 0-1.375 0.313-1.844 0.781-0.438 0.438-0.781 1.125-0.781 1.844zM2.813 10.281c0-1 0.813-1.875 1.813-1.875 1.031 0 1.875 0.875 1.875 1.875 0 1.031-0.844 1.844-1.875 1.844-1 0-1.813-0.813-1.813-1.844zM7.844 23.125v-9.531c0-0.219 0.219-0.406 0.375-0.406h2.656c0.375 0 0.375 0.438 0.375 0.719 0.75-0.75 1.719-0.938 2.719-0.938 2.438 0 4 1.156 4 3.719v6.438c0 0.219-0.188 0.406-0.375 0.406h-2.75c-0.219 0-0.375-0.219-0.375-0.406v-5.813c0-0.969-0.281-1.5-1.375-1.5-1.375 0-1.719 0.906-1.719 2.125v5.188c0 0.219-0.219 0.406-0.438 0.406h-2.719c-0.156 0-0.375-0.219-0.375-0.406zM2.875 23.125v-9.531c0-0.219 0.219-0.406 0.375-0.406h2.719c0.25 0 0.406 0.156 0.406 0.406v9.531c0 0.219-0.188 0.406-0.406 0.406h-2.719c-0.188 0-0.375-0.219-0.375-0.406z"></path>
+            </g>
+          </svg>
+        </div>
+
+        <div>
+          <span>LinkedIn</span>
+          <p>linkedin.com/in/gustavoviti/</p>
+        </div>
+      </a>
+
+      <!-- Contato: Instagram -->
+      <a href="https://www.instagram.com/gustavo_viti_dev/" target="_blank" class="contact-card">
+        <div class="icon">
+          <!-- SVG do Instagram -->
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#7c39ed"></path>
+              <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#7c39ed"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#7c39ed"></path>
+            </g>
+          </svg>
+        </div>
+
+        <div>
+          <span>Instagram</span>
+          <p>@gustavo_viti_dev</p>
+        </div>
+      </a>
+
+      <!-- CTA: Currículo (Baixar CV)
+           Obs: seu href está como "../assets/currículo.docx.pdf"
+           Verifique se esse caminho existe no deploy. Se o PDF estiver em /assets, use "assets/..." -->
       <a href="../assets/currículo.docx.pdf" target="_blank" class="btn cv">
-      <div class="icon">
-        <svg fill="#7c39ed" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 392.533 392.533" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M292.396,324.849H99.879c-6.012,0-10.925,4.848-10.925,10.925c0,6.012,4.849,10.925,10.925,10.925h192.582 c6.012,0,10.925-4.849,10.925-10.925C303.321,329.697,298.473,324.849,292.396,324.849z"></path> </g> </g> <g> <g> <path d="M292.396,277.01H99.879c-6.012,0-10.925,4.848-10.925,10.925c0,6.012,4.849,10.925,10.925,10.925h192.582 c6.012,0,10.925-4.849,10.925-10.925C303.321,281.859,298.473,277.01,292.396,277.01z"></path> </g> </g> <g> <g> <path d="M196.137,45.834c-25.859,0-46.998,21.075-46.998,46.998c0,25.859,21.139,46.933,46.998,46.933 s46.998-21.075,46.998-46.998S221.996,45.834,196.137,45.834z M196.137,117.851c-13.77,0-25.083-11.313-25.083-25.083 c0-13.77,11.248-25.083,25.083-25.083s25.083,11.313,25.083,25.083C221.22,106.537,209.907,117.851,196.137,117.851z"></path> </g> </g> <g> <g> <path d="M258.521,163.362c-39.887-15.515-84.752-15.515-124.638,0c-13.059,5.107-21.786,18.101-21.786,32.388v44.347 c-0.065,6.012,4.849,10.925,10.861,10.925h146.424c6.012,0,10.925-4.848,10.925-10.925V195.75 C280.307,181.463,271.58,168.469,258.521,163.362z M258.521,229.236H133.883v-33.422c0-5.301,3.168-10.214,7.887-12.024 c34.844-13.511,74.02-13.511,108.865,0c4.719,1.875,7.887,6.659,7.887,12.024V229.236z"></path> </g> </g> <g> <g> <path d="M313.083,0H131.491c-8.404,0-16.291,3.232-22.238,9.18L57.018,61.414c-5.947,5.948-9.18,13.834-9.18,22.238v277.333 c0,17.39,14.158,31.547,31.547,31.547h233.762c17.39,0,31.547-14.158,31.547-31.547V31.547C344.501,14.158,330.343,0,313.083,0z M112.032,37.236v27.022H85.01L112.032,37.236z M322.715,116.816h-40.598c-6.012,0-10.925,4.849-10.925,10.925 c0,6.012,4.848,10.925,10.925,10.925h40.598v19.394h-14.869c-6.012,0-10.925,4.848-10.925,10.925 c0,6.012,4.849,10.925,10.925,10.925h14.869v181.139c0,5.366-4.331,9.697-9.632,9.697H79.192c-5.301,0-9.632-4.331-9.632-9.632 V86.044h53.398c6.012,0,10.925-4.848,10.925-10.925V21.721h179.2c5.301,0,9.632,4.331,9.632,9.632V116.816z"></path> </g> </g> </g></svg>
-      </div>
-      <div>
-        <span>Cúrriculo</span>
-        <p>Baixar CV</p>
-      </div>
+        <div class="icon">
+          <!-- SVG do documento -->
+          <svg fill="#7c39ed" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 392.533 392.533" xml:space="preserve">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <!-- (Conteúdo do SVG mantido) -->
+              <g><g><path d="M292.396,324.849H99.879c-6.012,0-10.925,4.848-10.925,10.925c0,6.012,4.849,10.925,10.925,10.925h192.582 c6.012,0,10.925-4.849,10.925-10.925C303.321,329.697,298.473,324.849,292.396,324.849z"></path></g></g>
+              <g><g><path d="M292.396,277.01H99.879c-6.012,0-10.925,4.848-10.925,10.925c0,6.012,4.849,10.925,10.925,10.925h192.582 c6.012,0,10.925-4.849,10.925-10.925C303.321,281.859,298.473,277.01,292.396,277.01z"></path></g></g>
+              <g><g><path d="M196.137,45.834c-25.859,0-46.998,21.075-46.998,46.998c0,25.859,21.139,46.933,46.998,46.933 s46.998-21.075,46.998-46.998S221.996,45.834,196.137,45.834z M196.137,117.851c-13.77,0-25.083-11.313-25.083-25.083 c0-13.77,11.248-25.083,25.083-25.083s25.083,11.313,25.083,25.083C221.22,106.537,209.907,117.851,196.137,117.851z"></path></g></g>
+              <g><g><path d="M258.521,163.362c-39.887-15.515-84.752-15.515-124.638,0c-13.059,5.107-21.786,18.101-21.786,32.388v44.347 c-0.065,6.012,4.849,10.925,10.861,10.925h146.424c6.012,0,10.925-4.848,10.925-10.925V195.75 C280.307,181.463,271.58,168.469,258.521,163.362z M258.521,229.236H133.883v-33.422c0-5.301,3.168-10.214,7.887-12.024 c34.844-13.511,74.02-13.511,108.865,0c4.719,1.875,7.887,6.659,7.887,12.024V229.236z"></path></g></g>
+              <g><g><path d="M313.083,0H131.491c-8.404,0-16.291,3.232-22.238,9.18L57.018,61.414c-5.947,5.948-9.18,13.834-9.18,22.238v277.333 c0,17.39,14.158,31.547,31.547,31.547h233.762c17.39,0,31.547-14.158,31.547-31.547V31.547C344.501,14.158,330.343,0,313.083,0z M112.032,37.236v27.022H85.01L112.032,37.236z M322.715,116.816h-40.598c-6.012,0-10.925,4.849-10.925,10.925 c0,6.012,4.848,10.925,10.925,10.925h40.598v19.394h-14.869c-6.012,0-10.925,4.848-10.925,10.925 c0,6.012,4.849,10.925,10.925,10.925h14.869v181.139c0,5.366-4.331,9.697-9.632,9.697H79.192c-5.301,0-9.632-4.331-9.632-9.632 V86.044h53.398c6.012,0,10.925-4.848,10.925-10.925V21.721h179.2c5.301,0,9.632,4.331,9.632,9.632V116.816z"></path></g></g>
+            </g>
+          </svg>
+        </div>
+
+        <div>
+          <span>Cúrriculo</span>
+          <p>Baixar CV</p>
+        </div>
       </a>
-</section>
+
+    </div>
+  </section>
 
 
-<footer>
-  <p>© 2026 Gustavo Viti. Todos os direitos reservados.</p>
-</footer>
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Gustavo Viti. Todos os direitos reservados.</p>
+  </footer>
 
-<script>
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".navbar nav a");
 
-window.addEventListener("scroll", () => {
-  let current = "";
+  <!-- ==========================================================
+       SCRIPTS
+       - Scroll Spy (underline do tópico ativo)
+       - Mouse light nos cards de stacks
+       - Mouse light na hero (e atualmente também no sobre)
+       - IntersectionObserver para animações de entrada com stagger
+  =========================================================== -->
+  <script>
+    /* ----------------------------------------------------------
+       1) SCROLL SPY: destaca o link da navbar conforme a seção
+       - Lê todas as <section>
+       - Define qual ID está "ativo" baseado na posição do scroll
+       - Aplica .active no link correspondente
+    ---------------------------------------------------------- */
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navbar nav a");
 
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
+    window.addEventListener("scroll", () => {
+      let current = "";
 
-    if (pageYOffset >= sectionTop - 200) {
-      current = section.getAttribute("id");
-    }
-  });
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
 
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href").includes(current)) {
-      link.classList.add("active");
-    }
-  });
-});
-
-document.querySelectorAll(".stack-card").forEach(card => {
-  card.addEventListener("mousemove", e => {
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty("--x", (e.clientX - rect.left) + "px");
-    card.style.setProperty("--y", (e.clientY - rect.top) + "px");
-  });
-});
-
-const hero = document.querySelector(".hero");
-const sobre = document.querySelector("#sobre");
-
-[hero, sobre].forEach(section => {
-  section.addEventListener("mousemove", e => {
-    const rect = section.getBoundingClientRect();
-    section.style.setProperty("--x", e.clientX - rect.left + "px");
-    section.style.setProperty("--y", e.clientY - rect.top + "px");
-  });
-});
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-
-      const parent = entry.target.parentElement;
-      const siblings = parent.querySelectorAll(".reveal");
-
-      siblings.forEach((el, index) => {
-        el.style.setProperty("--delay", `${index * 120}ms`);
-        observer.unobserve(el);
+        // Quando o scroll passa um pouco antes da seção, ela vira a "atual"
+        if (pageYOffset >= sectionTop - 200) {
+          current = section.getAttribute("id");
+        }
       });
 
-      siblings.forEach(el => el.classList.add("show"));
-    }
-  });
-}, { threshold: 0.15 });
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
+    });
 
-document.querySelectorAll(".reveal").forEach(el => {
-  observer.observe(el);
-});
-  reveals.forEach(el => io.observe(el));
 
-</script>
+    /* ----------------------------------------------------------
+       2) MOUSE LIGHT: efeito de luz seguindo o mouse nos cards
+       - Define variáveis CSS --x e --y usadas no ::before do card
+    ---------------------------------------------------------- */
+    document.querySelectorAll(".stack-card").forEach(card => {
+      card.addEventListener("mousemove", e => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty("--x", (e.clientX - rect.left) + "px");
+        card.style.setProperty("--y", (e.clientY - rect.top) + "px");
+      });
+    });
 
+
+    /* ----------------------------------------------------------
+       3) MOUSE LIGHT NA HERO (e no Sobre, se você quiser manter)
+       - Mesmo conceito: atualiza --x e --y no elemento da seção
+       - OBS: se você removeu a luz do #sobre, pode tirar o #sobre daqui
+    ---------------------------------------------------------- */
+    const hero = document.querySelector(".hero");
+    const sobre = document.querySelector("#sobre");
+
+    [hero, sobre].forEach(section => {
+      section.addEventListener("mousemove", e => {
+        const rect = section.getBoundingClientRect();
+        section.style.setProperty("--x", e.clientX - rect.left + "px");
+        section.style.setProperty("--y", e.clientY - rect.top + "px");
+      });
+    });
+
+
+    /* ----------------------------------------------------------
+       4) REVEAL + STAGGER: animação de entrada com IntersectionObserver
+       - Quando um elemento .reveal entra na tela:
+         a) pega os irmãos .reveal do mesmo pai
+         b) aplica --delay progressivo (stagger)
+         c) adiciona .show para disparar a transição
+         d) "unobserve" para animar apenas uma vez
+    ---------------------------------------------------------- */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+
+          const parent = entry.target.parentElement;
+          const siblings = parent.querySelectorAll(".reveal");
+
+          // Define o delay automaticamente para cada irmão (efeito sequencial)
+          siblings.forEach((el, index) => {
+            el.style.setProperty("--delay", `${index * 120}ms`);
+            observer.unobserve(el);
+          });
+
+          // Ativa a animação
+          siblings.forEach(el => el.classList.add("show"));
+        }
+      });
+    }, { threshold: 0.15 });
+
+    // Observa todos os elementos com classe .reveal
+    document.querySelectorAll(".reveal").forEach(el => {
+      observer.observe(el);
+    });
+
+  </script>
 
 </body>
 </html>
