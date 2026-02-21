@@ -696,3 +696,280 @@ footer {
 .reveal-right.show {
   transform: translateX(0);
 }
+
+/* ===== Botão "Demo em breve" ===== */
+.btn-soon{
+  background: transparent;
+  border: 1px solid rgba(124,58,237,0.55);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.btn-soon:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(124,58,237,0.18);
+  border-color: rgba(124,58,237,0.9);
+}
+
+/* ===== Modal "Em desenvolvimento" ===== */
+.soon-modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 2000;
+}
+
+.soon-modal.show{ display: block; }
+
+.soon-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(10px);
+}
+
+.soon-dialog{
+  position: relative;
+  width: min(920px, 92vw);
+  max-height: 86vh;
+  overflow: auto;
+  margin: 7vh auto 0;
+  border-radius: 22px;
+  background:
+    radial-gradient(900px circle at 20% 0%, rgba(79,70,229,0.20), transparent 45%),
+    radial-gradient(900px circle at 90% 30%, rgba(124,58,237,0.18), transparent 40%),
+    rgba(15, 15, 26, 0.92);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 30px 90px rgba(0,0,0,0.55);
+  padding: 26px;
+}
+
+.soon-close{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.soon-header{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.soon-mark{
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(124,58,237,0.12);
+  border: 1px solid rgba(124,58,237,0.18);
+}
+
+.soon-mark svg{
+  width: 22px;
+  height: 22px;
+  color: #a78bfa;
+}
+
+.soon-sub{ color: rgba(228,228,240,0.72); margin-top: 6px; }
+
+.soon-row{
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.soon-label{
+  color: rgba(228,228,240,0.65);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.soon-value{
+  color: var(--text);
+  font-weight: 600;
+}
+
+.soon-pill{
+  justify-self: start;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(79,70,229,0.14);
+  border: 1px solid rgba(79,70,229,0.25);
+  color: #c7d2fe;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.soon-progress{
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.10);
+  overflow: hidden;
+}
+
+.soon-bar{
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  transition: width 400ms ease;
+}
+
+.soon-divider{
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  margin: 14px 0 18px;
+}
+
+.soon-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 900px){
+  .soon-row{ grid-template-columns: 100px 1fr; }
+  .soon-row .soon-value:last-child{ justify-self: start; }
+  .soon-grid{ grid-template-columns: 1fr; }
+}
+
+.soon-card{
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.soon-card h5{
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.soon-card ul{
+  margin-left: 18px;
+  color: rgba(228,228,240,0.72);
+  display: grid;
+  gap: 6px;
+}
+
+.soon-actions{
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+/* ===== WIP Badge (Em desenvolvimento) ===== */
+.project-card{
+  position: relative; /* necessário pro badge ancorar */
+}
+
+/* se quiser destacar cards em progresso */
+.project-card.is-wip{
+  border: 1px solid rgba(124,58,237,0.12);
+}
+
+.wip-badge{
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+
+  padding: 8px 12px;
+  border-radius: 999px;
+
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+
+  color: rgba(255,255,255,0.92);
+  background:
+    linear-gradient(135deg, rgba(124,58,237,0.95), rgba(79,70,229,0.85));
+  box-shadow:
+    0 14px 40px rgba(124,58,237,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.18);
+
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(8px);
+}
+
+/* brilho suave pulsando (bem discreto) */
+.wip-badge::after{
+  content:"";
+  position:absolute;
+  inset:-6px;
+  border-radius:999px;
+  background: radial-gradient(circle, rgba(124,58,237,0.25), transparent 60%);
+  filter: blur(10px);
+  opacity: 0.6;
+  z-index:-1;
+  animation: wipGlow 2.6s ease-in-out infinite;
+}
+
+@keyframes wipGlow{
+  0%,100% { opacity: 0.40; transform: scale(0.98); }
+  50%     { opacity: 0.75; transform: scale(1.02); }
+}
+
+/* ===== Click animations ===== */
+.btn-soon{
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-soon:active{
+  transform: translateY(0); /* tira o lift no clique */
+}
+
+/* Ripple/shine sutil */
+.btn-soon::after{
+  content:"";
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  transform: translate(-50%,-50%) scale(0);
+  background: radial-gradient(circle, rgba(124,58,237,0.35), transparent 60%);
+  opacity: 0;
+  pointer-events:none;
+}
+
+.btn-soon.pulse::after{
+  animation: btnRipple 520ms ease-out;
+}
+
+@keyframes btnRipple{
+  0%   { transform: translate(-50%,-50%) scale(0); opacity: 0.0; }
+  25%  { opacity: 1; }
+  100% { transform: translate(-50%,-50%) scale(18); opacity: 0; }
+}
+
+/* Pulse do card */
+.project-card.card-pulse{
+  animation: cardPulse 420ms ease-out;
+}
+
+@keyframes cardPulse{
+  0%   { transform: translateY(0) scale(1); }
+  45%  { transform: translateY(-4px) scale(1.01); }
+  100% { transform: translateY(0) scale(1); }
+}

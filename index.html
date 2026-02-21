@@ -246,63 +246,9 @@
 
     <div class="projects-grid">
 
-      <!-- Projeto 1: Viti Training -->
+      <!-- Projeto 1: Nexus -->
       <div class="project-card reveal">
-        <img src="assets/image/VITI TRAINIG.png" alt="Sistema de Produtos">
-        <div class="project-content">
-          <h4>Viti Training</h4>
-          <p>
-            Aplicativo mobile desenvolvido em Flutter com Firebase...
-          </p>
-
-          <!-- Tags de tecnologia -->
-          <div class="tech">
-            <span>Flutter</span>
-            <span>Firebase Auth</span>
-            <span>Firestore</span>
-            <span>Mobile Architecture</span>
-            <span>Firebase</span>
-          </div>
-
-          <!-- Links do projeto -->
-          <div class="project-links">
-            <a href="https://github.com/GustavoViti/Viti-Training" target="_blank">GitHub</a>
-            <a href="loading.html" target="_blank">Demo</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Projeto 2: StockUp -->
-      <div class="project-card reveal">
-        <img src="assets/image/stockup.png" alt="Sistema de Produtos">
-        <div class="project-content">
-          <h4>StockUp</h4>
-          <p>
-            Sistema web completo para gestão de estoque, com autenticação,
-            cadastro de produtos e integração com API Node.js e banco MySQL.
-          </p>
-
-          <!-- Tags de tecnologia -->
-          <div class="tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Node.js</span>
-            <span>MySQL</span>
-            <span>REST API</span>
-          </div>
-
-          <!-- Links do projeto -->
-          <div class="project-links">
-            <a href="https://github.com/GustavoViti/StockUp" target="_blank">GitHub</a>
-            <a href="loading.html" target="_blank">Demo</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Projeto 3: Nexus -->
-      <div class="project-card reveal">
-        <img src="assets/image/nexus.png" alt="Sistema de gestão financeira">
+        <img src="assets/image/nexus demonstração.gif" alt="Sistema de gestão financeira">
         <div class="project-content">
           <h4>Nexus</h4>
           <p>
@@ -328,6 +274,82 @@
           </div>
         </div>
       </div>
+
+      <!-- Projeto 2: Viti Training -->
+      <div class="project-card reveal is-wip">
+        <span class="wip-badge" title="Projeto em desenvolvimento">
+          Em desenvolvimento
+        </span>
+        <img src="assets/image/VITI TRAINIG.png" alt="Sistema de Produtos">
+        <div class="project-content">
+          <h4>Viti Training</h4>
+          <p>
+            Aplicativo mobile desenvolvido em Flutter com Firebase...
+          </p>
+
+          <!-- Tags de tecnologia -->
+          <div class="tech">
+            <span>Flutter</span>
+            <span>Firebase Auth</span>
+            <span>Firestore</span>
+            <span>Mobile Architecture</span>
+            <span>Firebase</span>
+          </div>
+
+          <!-- Links do projeto -->
+          <div class="project-links">
+            <a href="https://github.com/GustavoViti/Viti-Training" target="_blank">GitHub</a>
+            <button class="demo-soon btn-soon"
+              data-project="Viti Training"
+              data-status="Versão Beta em testes"
+              data-progress="60"
+              data-eta="Publicação após validação"
+              type="button">
+              Demo em breve
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projeto 3: StockUp -->
+      <div class="project-card reveal is-wip">
+        <span class="wip-badge" title="Projeto em desenvolvimento">
+          Em desenvolvimento
+        </span>
+        <img src="assets/image/stockup.png" alt="Sistema de Produtos">
+        <div class="project-content">
+          <h4>StockUp</h4>
+          <p>
+            Sistema web completo para gestão de estoque, com autenticação,
+            cadastro de produtos e integração com API Node.js e banco MySQL.
+          </p>
+
+          <!-- Tags de tecnologia -->
+          <div class="tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Node.js</span>
+            <span>MySQL</span>
+            <span>REST API</span>
+          </div>
+
+          <!-- Links do projeto -->
+          <div class="project-links">
+            <a href="https://github.com/GustavoViti/StockUp" target="_blank">GitHub</a>
+            <button class="demo-soon btn-soon"
+              data-project="StockUp"
+              data-status="Backend em refinamento"
+              data-progress="75"
+              data-eta="Deploy público em breve"
+              type="button">
+              Demo em breve
+            </button>
+          </div>
+        </div>
+      </div>
+
+      
 
 
     </div>
@@ -482,6 +504,92 @@
     <p>© 2026 Gustavo Viti. Todos os direitos reservados.</p>
   </footer>
 
+  <!-- Modal: Projeto em desenvolvimento -->
+<div class="soon-modal" id="soonModal" aria-hidden="true">
+  <div class="soon-backdrop" data-close="true"></div>
+
+  <div class="soon-dialog" role="dialog" aria-modal="true" aria-labelledby="soonTitle">
+    <button class="soon-close" type="button" aria-label="Fechar" data-close="true">✕</button>
+
+    <div class="soon-header">
+      <div class="soon-mark">
+        <!-- ícone minimalista -->
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div>
+        <h4 id="soonTitle">Projeto em desenvolvimento</h4>
+        <p class="soon-sub" id="soonSub">
+          Estamos preparando uma demo pública com a mesma qualidade do restante do portfólio.
+        </p>
+      </div>
+    </div>
+
+    <div class="soon-body">
+      <div class="soon-row">
+        <span class="soon-label">Projeto</span>
+        <span class="soon-value" id="soonProject">—</span>
+      </div>
+
+      <div class="soon-row">
+        <span class="soon-label">Status</span>
+        <span class="soon-pill" id="soonStatus">—</span>
+      </div>
+
+      <div class="soon-row">
+        <span class="soon-label">Progresso</span>
+        <div class="soon-progress">
+          <div class="soon-bar" id="soonBar" style="width: 0%"></div>
+        </div>
+        <span class="soon-value" id="soonProgressText">0%</span>
+      </div>
+
+      <div class="soon-row">
+        <span class="soon-label">Previsão</span>
+        <span class="soon-value" id="soonEta">—</span>
+      </div>
+
+      <div class="soon-divider"></div>
+
+      <div class="soon-grid">
+        <div class="soon-card">
+          <h5>✅ Já feito</h5>
+          <ul>
+            <li>Base do projeto e arquitetura</li>
+            <li>Layout responsivo</li>
+            <li>Integração inicial de dados</li>
+          </ul>
+        </div>
+
+        <div class="soon-card">
+          <h5>🧩 Em andamento</h5>
+          <ul>
+            <li>Regras de negócio e validações</li>
+            <li>Refino de UI/UX</li>
+            <li>Testes e ajustes finais</li>
+          </ul>
+        </div>
+
+        <div class="soon-card">
+          <h5>🚀 Próximos passos</h5>
+          <ul>
+            <li>Deploy da demo</li>
+            <li>Documentação</li>
+            <li>Publicação no portfólio</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="soon-actions">
+      <a class="btn outline" href="#contato">Me chame no contato</a>
+      <button class="btn" type="button" data-close="true">Fechar</button>
+    </div>
+  </div>
+</div>
 
   <!-- ==========================================================
        SCRIPTS
@@ -582,6 +690,65 @@
     document.querySelectorAll(".reveal").forEach(el => {
       observer.observe(el);
     });
+
+// ===== Modal "Demo em breve" =====
+const soonModal = document.getElementById("soonModal");
+
+function openSoonModal(data){
+  document.getElementById("soonProject").textContent = data.project || "—";
+  document.getElementById("soonStatus").textContent = data.status || "Em desenvolvimento";
+  document.getElementById("soonEta").textContent = data.eta || "Sem previsão";
+  const progress = Math.max(0, Math.min(100, Number(data.progress || 0)));
+  document.getElementById("soonBar").style.width = progress + "%";
+  document.getElementById("soonProgressText").textContent = progress + "%";
+
+  soonModal.classList.add("show");
+  soonModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closeSoonModal(){
+  soonModal.classList.remove("show");
+  soonModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+document.querySelectorAll(".demo-soon").forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    // animação no botão
+    btn.classList.remove("pulse");
+    void btn.offsetWidth; // reflow pra reiniciar animação
+    btn.classList.add("pulse");
+
+    // animação no card
+    const card = btn.closest(".project-card");
+    if(card){
+      card.classList.remove("card-pulse");
+      void card.offsetWidth;
+      card.classList.add("card-pulse");
+    }
+
+    // abre modal após micro-delay (pra sentir a animação)
+    setTimeout(() => {
+      openSoonModal({
+        project: btn.dataset.project,
+        status: btn.dataset.status,
+        progress: btn.dataset.progress,
+        eta: btn.dataset.eta
+      });
+    }, 140);
+
+  });
+});
+
+soonModal.addEventListener("click", (e) => {
+  if (e.target?.dataset?.close === "true") closeSoonModal();
+});
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && soonModal.classList.contains("show")) closeSoonModal();
+});
 
   </script>
 
