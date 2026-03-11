@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impérios Burger — Organograma de Widgets</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style/widgets.css">
+</head>
+<body>
+<div class="amb amb1"></div>
+<div class="amb amb2"></div>
+<div class="amb amb3"></div>
+
+<header>
+  <div class="logo">
+    <div class="logo-mark"><img src="assets/image/logo.png" alt=""></div>
+    <div class="logo-copy">
+      <h1>Impérios Burger</h1>
+      <p>Organograma de Widgets · Android · Flutter</p>
+    </div>
+  </div>
+  <div class="tags">
+    <span class="tag">Prof. Nivaldo</span>
+    <span class="tag">03/03/2026</span>
+    <span class="tag gold">Projeto de Extensão</span>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner" id="navInner"></div>
+</nav>
+
+<main>
+  <!-- Visão Geral -->
+  <div id="sec-all" class="sec on">
+    <div class="stats">
+      <div class="st"><div class="st-n">7</div><div class="st-l">Telas Android</div></div>
+      <div class="st"><div class="st-n">63</div><div class="st-l">Widgets mapeados</div></div>
+      <div class="st"><div class="st-n">5</div><div class="st-l">Membros do grupo</div></div>
+      <div class="st"><div class="st-n">5</div><div class="st-l">Tipos de widget</div></div>
+    </div>
+    <div class="all-grid" id="allGrid"></div>
+    <div class="legend">
+      <span class="lg-t">Legenda</span>
+      <span class="bd bi">Input</span><span class="lg-sep">Entrada de dados</span>
+      <span class="bd bd2">Display</span><span class="lg-sep">Exibição</span>
+      <span class="bd ba">Ação</span><span class="lg-sep">Botão / interação</span>
+      <span class="bd bn">Nav</span><span class="lg-sep">Navegação</span>
+      <span class="bd bl">Lista</span><span class="lg-sep">Listagem de itens</span>
+    </div>
+  </div>
+  <!-- Screen sections injected by JS -->
+</main>
+
+<footer>
+  <span>Impérios Burger · App de Delivery de Comida · Flutter / Android</span>
+  <span class="ft-brand">IMPÉRIOS BURGER</span>
+  <span>Projeto de Extensão · 2026</span>
+</footer>
+
+<div class="rbn-wrap">
+  <a href="relatorio_projeto_extensao.docx" class="rbn" download>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="12" y1="11" x2="12" y2="17"/>
+      <polyline points="9 14 12 17 15 14"/>
+    </svg>
+    Baixar Relatório
+  </a>
+</div>
+
+<script>
+const T = {
+  input:'bi', display:'bd2', action:'ba', nav:'bn', list:'bl', struct:'bs'
+};
+const TL = { input:'Input', display:'Display', action:'Ação', nav:'Nav', list:'Lista', struct:'Struct' };
+
+const DATA = [
+  { id:'t1', tela:'Tela 1', icon:'🔐', title:'Login & Cadastro', member:'Gustavo Viti',
+    desc:'Ponto de entrada do app. Permite autenticação com conta existente ou criação de nova conta via alternância de estado.',
+    root:'Scaffold',
+    groups:[
+      { name:'Column — Login', icon:'📐', ch:[
+        {n:'Image — Logo', t:'display', d:'Exibe o logotipo do Impérios Burger, reforçando identidade visual da marca.'},
+        {n:'TextField — E-mail', t:'input', d:'Campo para inserção do endereço de e-mail do usuário.'},
+        {n:'TextField — Senha', t:'input', d:'Campo com obscureText ativo para entrada segura de senha.'},
+        {n:'ElevatedButton — Entrar', t:'action', d:'Autentica o usuário e redireciona para a tela Home.'},
+        {n:'TextButton — Cadastrar-se', t:'nav', d:'Alterna o estado para exibir o formulário de cadastro.'},
+        {n:'TextButton — Esqueci senha', t:'nav', d:'Inicia fluxo de recuperação de senha por e-mail.'},
+      ]},
+      { name:'Form — Cadastro', icon:'📝', ch:[
+        {n:'TextField — Nome completo', t:'input', d:'Campo para o nome que identificará o usuário no app.'},
+        {n:'TextField — E-mail', t:'input', d:'E-mail que será o identificador único da conta.'},
+        {n:'TextField — Telefone', t:'input', d:'Número para contato e confirmação de pedidos.'},
+        {n:'TextField — Senha', t:'input', d:'Senha de acesso à conta, com validação de força.'},
+        {n:'ElevatedButton — Criar conta', t:'action', d:'Valida e submete o formulário, criando a nova conta.'},
+      ]},
+    ]
+  },
+  { id:'t2', tela:'Tela 2', icon:'🏠', title:'Home / Cardápio', member:'Gustavo Viti',
+    desc:'Interface principal de navegação. Exibe restaurantes disponíveis com filtros por categoria, banner promocional rotativo e busca em tempo real.',
+    root:'Scaffold',
+    groups:[
+      { name:'AppBar', icon:'📌', ch:[
+        {n:'Text — Localização', t:'display', d:'Endereço atual de entrega com ícone de localização.'},
+        {n:'IconButton — Carrinho', t:'nav', d:'Atalho rápido para o carrinho de compras.'},
+      ]},
+      { name:'Column (Body)', icon:'📐', ch:[
+        {n:'SearchBar — Buscar', t:'input', d:'Filtra restaurantes e pratos em tempo real ao digitar.'},
+        {n:'PageView — Carrossel', t:'display', d:'Banners promocionais rotativos com as melhores ofertas.'},
+        {n:'Row — FilterChips', t:'action', d:'Chips de categoria: Hamburguer, Pizza, Salada e outros.'},
+        {n:'ListView — Cards', t:'list', d:'Lista rolável de cards de restaurantes disponíveis.'},
+      ]},
+      { name:'Card (Restaurante)', icon:'🃏', ch:[
+        {n:'Image — Foto', t:'display', d:'Foto de capa do restaurante para identificação visual.'},
+        {n:'Text — Nome / Avaliação', t:'display', d:'Nome do restaurante e nota média das avaliações.'},
+        {n:'Text — Tempo de entrega', t:'display', d:'Estimativa de entrega em minutos.'},
+        {n:'InkWell', t:'nav', d:'Detecta o toque e navega para a tela de detalhes.'},
+      ]},
+      { name:'BottomNavigationBar', icon:'📊', ch:[
+        {n:'Item — Home', t:'nav', d:'Ícone de casa, retorna à tela principal.'},
+        {n:'Item — Pedidos', t:'nav', d:'Ícone de lista, acessa histórico de pedidos.'},
+        {n:'Item — Perfil', t:'nav', d:'Ícone de usuário, acessa perfil e configurações.'},
+      ]},
+    ]
+  },
+  { id:'t3', tela:'Tela 3', icon:'🍔', title:'Detalhes do Restaurante', member:'Pedro Freitas',
+    desc:'Exibe informações completas: foto expansível com parallax, avaliação, cardápio em abas por categoria e adição de itens ao carrinho.',
+    root:'Scaffold + CustomScrollView',
+    groups:[
+      { name:'SliverAppBar', icon:'📸', ch:[
+        {n:'Image — Capa', t:'display', d:'Foto do restaurante em tela cheia com efeito parallax.'},
+        {n:'Row — Estrelas', t:'display', d:'Avaliação média com ícones e número de avaliações.'},
+        {n:'Text — Nome', t:'display', d:'Nome do restaurante sobreposto à imagem de capa.'},
+      ]},
+      { name:'TabBar + TabBarView', icon:'📑', ch:[
+        {n:'Tab — Cardápio', t:'nav', d:'Lista itens do cardápio separados por categoria.'},
+        {n:'Tab — Avaliações', t:'nav', d:'Comentários e notas deixados por outros clientes.'},
+        {n:'Tab — Informações', t:'nav', d:'Endereço, horário de funcionamento e contato.'},
+      ]},
+      { name:'ListView — Cardápio', icon:'🧾', ch:[
+        {n:'Image — Foto do prato', t:'display', d:'Foto do item para identificação visual rápida.'},
+        {n:'Text — Nome / Descrição', t:'display', d:'Nome e breve descrição do prato.'},
+        {n:'Text — Preço', t:'display', d:'Valor formatado em reais (R$).'},
+        {n:'IconButton — Adicionar (+)', t:'action', d:'Adiciona o item selecionado ao carrinho do usuário.'},
+      ]},
+      { name:'FloatingActionButton', icon:'🛒', ch:[
+        {n:'Icon + Badge — Carrinho', t:'nav', d:'Botão flutuante com contador; navega direto ao carrinho.'},
+      ]},
+    ]
+  },
+  { id:'t4', tela:'Tela 4', icon:'🛒', title:'Carrinho de Compras', member:'João Toledo',
+    desc:'Centraliza itens selecionados. Ajuste de quantidades, remoção via swipe, aplicação de cupons e resumo financeiro antes do checkout.',
+    root:'Scaffold',
+    groups:[
+      { name:'ListView — Itens', icon:'📋', ch:[
+        {n:'Image — Miniatura', t:'display', d:'Foto reduzida do prato para identificação rápida.'},
+        {n:'Text — Nome / Preço', t:'display', d:'Nome e valor unitário do item no carrinho.'},
+        {n:'Row — Botões +/–', t:'action', d:'Controles para aumentar ou diminuir a quantidade.'},
+        {n:'IconButton — Remover', t:'action', d:'Remove o item do carrinho após confirmação.'},
+      ]},
+      { name:'Row — Cupom de Desconto', icon:'🎟️', ch:[
+        {n:'TextField — Código', t:'input', d:'Campo para inserção do código de cupom promocional.'},
+        {n:'OutlinedButton — Aplicar', t:'action', d:'Valida e aplica o desconto, atualizando o total.'},
+      ]},
+      { name:'Column — Resumo Financeiro', icon:'💰', ch:[
+        {n:'Text — Subtotal', t:'display', d:'Soma dos itens antes da taxa de entrega.'},
+        {n:'Text — Taxa de entrega', t:'display', d:'Valor cobrado pelo serviço de entrega.'},
+        {n:'Divider', t:'display', d:'Separador visual entre itens e total final.'},
+        {n:'Text — Total', t:'display', d:'Valor final a ser pago pelo pedido completo.'},
+        {n:'ElevatedButton — Finalizar Pedido', t:'action', d:'Avança para o checkout (endereço e pagamento).'},
+      ]},
+    ]
+  },
+  { id:'t5', tela:'Tela 5', icon:'📍', title:'Checkout / Pagamento', member:'Yasmin Ruela',
+    desc:'Guia o usuário em etapas sequenciais: endereço de entrega, método de pagamento e confirmação final. O Stepper reduz erros e abandono.',
+    root:'Scaffold',
+    groups:[
+      { name:'Stepper — Etapas', icon:'🪜', ch:[
+        {n:'Step 1 — Endereço', t:'nav', d:'Formulário de endereço de entrega com validação.'},
+        {n:'Step 2 — Pagamento', t:'nav', d:'Seleção do método de pagamento preferido.'},
+        {n:'Step 3 — Confirmação', t:'nav', d:'Revisão completa antes de confirmar o pedido.'},
+      ]},
+      { name:'Form — Endereço', icon:'🏠', ch:[
+        {n:'TextField — CEP', t:'input', d:'Auto-preenche rua e bairro via API de CEP.'},
+        {n:'TextField — Rua / Número', t:'input', d:'Logradouro e número do local de entrega.'},
+        {n:'TextField — Complemento', t:'input', d:'Apto, bloco ou ponto de referência (opcional).'},
+        {n:'DropdownButton — Cidade', t:'input', d:'Lista suspensa para seleção da cidade.'},
+      ]},
+      { name:'Form — Pagamento', icon:'💳', ch:[
+        {n:'RadioListTile — Métodos', t:'input', d:'Opções: Pix, Cartão crédito/débito ou Dinheiro.'},
+        {n:'TextField — Número do cartão', t:'input', d:'Exibido condicionalmente ao selecionar cartão.'},
+        {n:'Row — Validade + CVV', t:'input', d:'Dados de segurança do cartão selecionado.'},
+      ]},
+      { name:'Confirmação', icon:'✅', ch:[
+        {n:'Card — Resumo final', t:'display', d:'Exibe itens, endereço e pagamento para revisão.'},
+        {n:'ElevatedButton — Confirmar', t:'action', d:'Envia o pedido e redireciona ao rastreamento.'},
+      ]},
+    ]
+  },
+  { id:'t6', tela:'Tela 6', icon:'📦', title:'Rastreamento do Pedido', member:'gustavo Viti',
+    desc:'Acompanhamento em tempo real com timeline de status, estimativa de entrega atualizada e dados do entregador quando a caminho.',
+    root:'Scaffold',
+    groups:[
+      { name:'Column — Status', icon:'📊', ch:[
+        {n:'LinearProgressIndicator', t:'display', d:'Barra de progresso que avança conforme o status muda.'},
+        {n:'Text — Tempo estimado', t:'display', d:'Estimativa de chegada em minutos, atualizada em tempo real.'},
+      ]},
+      { name:'Timeline (Widget custom)', icon:'⏱️', ch:[
+        {n:'Icon + Text — Pedido recebido', t:'display', d:'Etapa 1: pedido confirmado pelo restaurante.'},
+        {n:'Icon + Text — Em preparo', t:'display', d:'Etapa 2: restaurante preparando o pedido.'},
+        {n:'Icon + Text — Saiu para entrega', t:'display', d:'Etapa 3: entregador a caminho do cliente.'},
+        {n:'Icon + Text — Entregue', t:'display', d:'Etapa 4: pedido entregue com sucesso.'},
+      ]},
+      { name:'Card — Entregador', icon:'🛵', ch:[
+        {n:'CircleAvatar — Foto', t:'display', d:'Foto circular do entregador responsável pelo pedido.'},
+        {n:'Text — Nome do entregador', t:'display', d:'Nome completo do entregador para identificação.'},
+        {n:'IconButton — Ligar', t:'action', d:'Inicia chamada telefônica ao entregador pelo app.'},
+      ]},
+    ]
+  },
+  { id:'t7', tela:'Tela 7', icon:'📋', title:'Histórico de Pedidos', member:'Gabrielly Simão',
+    desc:'Centraliza pedidos ativos e concluídos. Permite ver detalhes, repetir pedido anterior e avaliar a experiência de entrega.',
+    root:'Scaffold',
+    groups:[
+      { name:'TabBar — Divisão', icon:'📑', ch:[
+        {n:'Tab — Pedidos ativos', t:'nav', d:'Lista de pedidos ainda em andamento.'},
+        {n:'Tab — Concluídos', t:'nav', d:'Histórico completo de pedidos finalizados.'},
+      ]},
+      { name:'ListView — Lista de pedidos', icon:'📋', ch:[
+        {n:'Card — Resumo do pedido', t:'display', d:'Restaurante, itens, data e valor total do pedido.'},
+        {n:'Chip — Status', t:'display', d:'Badge colorido indicando status atual (Em andamento, Entregue…).'},
+        {n:'OutlinedButton — Ver detalhes', t:'nav', d:'Abre modal com detalhes completos do pedido.'},
+        {n:'ElevatedButton — Repetir pedido', t:'action', d:'Adiciona os mesmos itens do pedido ao carrinho.'},
+      ]},
+      { name:'AlertDialog — Detalhes', icon:'💬', ch:[
+        {n:'ListView — Itens do pedido', t:'list', d:'Lista completa com todos os itens e quantidades.'},
+        {n:'StarRating — Avaliação', t:'action', d:'Avaliação em estrelas da experiência de entrega.'},
+        {n:'TextButton — Fechar', t:'action', d:'Fecha o modal e volta à lista de pedidos.'},
+      ]},
+    ]
+  },
+];
+
+// ── Nav ──
+const navInner = document.getElementById('navInner');
+const navBtns = [];
+const allBtn = document.createElement('button');
+allBtn.className = 'nb active'; allBtn.dataset.id = 'all';
+allBtn.innerHTML = '<span class="dot"></span>Visão Geral';
+allBtn.onclick = () => show('all');
+navInner.appendChild(allBtn);
+navBtns.push(allBtn);
+
+DATA.forEach(sc => {
+  const b = document.createElement('button');
+  b.className = 'nb'; b.dataset.id = sc.id;
+  b.innerHTML = `<span class="dot"></span>${sc.icon} ${sc.tela.replace('Tela ','')}`;
+  b.onclick = () => show(sc.id);
+  navInner.appendChild(b);
+  navBtns.push(b);
+});
+
+// ── Overview grid ──
+const allGrid = document.getElementById('allGrid');
+DATA.forEach(sc => {
+  const total = sc.groups.reduce((a,g)=>a+g.ch.length,0);
+  const top = sc.groups[0].ch.slice(0,3).map(c=>c.n.split(' — ')[0]);
+  const card = document.createElement('div');
+  card.className = 'mc';
+  card.onclick = ()=> show(sc.id);
+  card.innerHTML = `
+    <div class="mc-h">
+      <div class="mc-ic">${sc.icon}</div>
+      <div><div class="mc-t">${sc.title}</div><div class="mc-m">${sc.member}</div></div>
+      <div class="mc-n">${total}</div>
+    </div>
+    <div class="mc-ws">
+      ${top.map(w=>`<span class="mc-w">${w}</span>`).join('')}
+      <span class="mc-w">+${total-top.length} mais</span>
+    </div>`;
+  allGrid.appendChild(card);
+});
+
+// ── Build screen sections ──
+const main = document.querySelector('main');
+DATA.forEach(sc => {
+  const sec = document.createElement('div');
+  sec.id = `sec-${sc.id}`; sec.className = 'sec';
+
+  // Header
+  const sh = document.createElement('div'); sh.className='sec-head';
+  sh.innerHTML=`
+    <div class="sec-num">${sc.tela}</div>
+    <div class="sec-info">
+      <h2>${sc.icon} ${sc.title}</h2>
+      <p>${sc.desc}</p>
+    </div>
+    <div class="mbadge">${sc.member}</div>`;
+  sec.appendChild(sh);
+
+  // Content grid
+  const cg = document.createElement('div'); cg.className='cgrid';
+
+  // Tree card
+  const tc = document.createElement('div'); tc.className='tcard';
+  tc.innerHTML=`<div class="tcard-lbl">Árvore de Widgets</div>`;
+  const tb = document.createElement('div'); tb.className='tbody';
+  const rn = document.createElement('div'); rn.className='root-nd';
+  rn.textContent = sc.root; tb.appendChild(rn);
+
+  sc.groups.forEach((g, gi) => {
+    const gd = document.createElement('div'); gd.className='wg';
+    const wp = document.createElement('div'); wp.className='wp';
+    wp.innerHTML=`<span class="pi">${g.icon}</span><span class="pn">${g.name}</span><span class="cv">▶</span>`;
+    gd.appendChild(wp);
+    const wc = document.createElement('div'); wc.className='wc';
+    g.ch.forEach(c=>{
+      const wi = document.createElement('div'); wi.className='wi';
+      wi.innerHTML=`<span class="wi-n">${c.n}</span><span class="bd ${T[c.t]||'bs'}">${TL[c.t]||'Struct'}</span>`;
+      wc.appendChild(wi);
+    });
+    wp.addEventListener('click',()=>{
+      const was = wc.classList.contains('op');
+      tb.querySelectorAll('.wc').forEach(x=>x.classList.remove('op'));
+      tb.querySelectorAll('.wp').forEach(x=>x.classList.remove('op'));
+      if(!was){ wc.classList.add('op'); wp.classList.add('op'); }
+    });
+    gd.appendChild(wc); tb.appendChild(gd);
+    if(gi===0){ wc.classList.add('op'); wp.classList.add('op'); }
+  });
+  tc.appendChild(tb); cg.appendChild(tc);
+
+  // Detail panel
+  const dp = document.createElement('div'); dp.className='dp';
+  dp.innerHTML=`<h3>Todos os Widgets — ${sc.title}</h3>`;
+  const wl = document.createElement('div'); wl.className='wl';
+  sc.groups.forEach(g=>{
+    g.ch.forEach(c=>{
+      const wr = document.createElement('div'); wr.className='wr';
+      wr.innerHTML=`
+        <div class="wr-l">
+          <div class="wr-n">${c.n}</div>
+          <div class="wr-d">${c.d}</div>
+        </div>
+        <span class="bd ${T[c.t]||'bs'}">${TL[c.t]||'Struct'}</span>`;
+      wr.addEventListener('click',()=>{
+        wl.querySelectorAll('.wr').forEach(r=>r.classList.remove('hl'));
+        wr.classList.add('hl');
+      });
+      wl.appendChild(wr);
+    });
+  });
+  dp.appendChild(wl); cg.appendChild(dp);
+  sec.appendChild(cg);
+  main.appendChild(sec);
+});
+
+// ── Show section ──
+function show(id){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+  document.getElementById(`sec-${id}`).classList.add('on');
+  navBtns.forEach(b=>b.classList.toggle('active', b.dataset.id===id));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
