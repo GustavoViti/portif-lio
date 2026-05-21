@@ -321,7 +321,7 @@
 
           <!-- Links do projeto -->
           <div class="project-links">
-            <a href="https://github.com/GustavoViti/Viti-Training" target="_blank">GitHub</a>
+            <a href="#" class="private-repo-trigger" data-project="Viti Training" data-demo="https://vititraining.com.br">GitHub</a>
             <a href="https://vititraining.com.br" target="_blank">Demo</a>
           </div>
         </div>
@@ -353,7 +353,7 @@
 
           <!-- Links do projeto -->
           <div class="project-links">
-            <a href="#" target="_blank">GitHub</a>
+            <a href="#" class="private-repo-trigger" data-project="Salvador Du Corte" data-demo="https://salvador-du-corte-2-0.vercel.app/index.html">GitHub</a>
             <a href="https://salvador-du-corte-2-0.vercel.app/index.html" target="_blank">Demo</a>
           </div>
         </div>
@@ -677,6 +677,41 @@
   </div>
 </div>
 
+  <!-- Modal: Repositório Privado -->
+  <div class="priv-modal" id="privModal" aria-hidden="true">
+    <div class="priv-backdrop" data-close="true"></div>
+
+    <div class="priv-dialog" role="dialog" aria-modal="true" aria-labelledby="privTitle">
+      <button class="priv-close" type="button" aria-label="Fechar" data-close="true">✕</button>
+
+      <!-- Ícone de cadeado -->
+      <div class="priv-lock">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+          <path d="M7 11V7a5 5 0 0110 0v4"/>
+        </svg>
+      </div>
+
+      <h4 id="privTitle">Repositório Privado</h4>
+      <p class="priv-project" id="privProjectName">—</p>
+
+      <p class="priv-desc">
+        Este projeto contém código proprietário e não pode ser disponibilizado publicamente.
+        Posso apresentar a arquitetura e o código em detalhes durante uma entrevista técnica ou mediante solicitação.
+      </p>
+
+      <div class="priv-pills">
+        <span>Código proprietário</span>
+        <span>Disponível sob solicitação</span>
+      </div>
+
+      <div class="priv-actions">
+        <a href="#contato" class="btn outline small" id="privContactBtn">Entrar em contato</a>
+        <a href="#" class="btn small" id="privDemoBtn" target="_blank">Ver Demo</a>
+      </div>
+    </div>
+  </div>
+
   <!-- ==========================================================
        SCRIPTS
        - Scroll Spy (underline do tópico ativo)
@@ -834,6 +869,43 @@ soonModal.addEventListener("click", (e) => {
 
 window.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && soonModal.classList.contains("show")) closeSoonModal();
+});
+
+// ===== Modal "Repositório Privado" =====
+const privModal = document.getElementById("privModal");
+
+function openPrivModal(data) {
+  document.getElementById("privProjectName").textContent = data.project || "—";
+  document.getElementById("privDemoBtn").href = data.demo || "#";
+  privModal.classList.add("show");
+  privModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closePrivModal() {
+  privModal.classList.remove("show");
+  privModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+document.querySelectorAll(".private-repo-trigger").forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    openPrivModal({
+      project: link.dataset.project,
+      demo:    link.dataset.demo,
+    });
+  });
+});
+
+privModal.addEventListener("click", (e) => {
+  if (e.target?.dataset?.close === "true") closePrivModal();
+});
+
+document.getElementById("privContactBtn").addEventListener("click", () => closePrivModal());
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && privModal.classList.contains("show")) closePrivModal();
 });
 
   </script>
