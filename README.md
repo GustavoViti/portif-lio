@@ -2,7 +2,7 @@
 
 <div align="center">
 
-### 👨‍💻 Desenvolvedor Fullstack  
+### 👨‍💻 Sistemas completos, robustos e escaláveis  
 SaaS, automações com IA e sistemas sob medida.
 
 🌐 **Acesse online:**  
@@ -72,7 +72,7 @@ HTML5 • CSS3 • JavaScript • IntersectionObserver • Flexbox • CSS Grid 
 
 ## 🎯 Objetivo
 
-Apresentar meus produtos e projetos para quem procura um sistema sob medida, uma automação ou quer conhecer o que já construí.
+Apresentar meus produtos e projetos para quem procura um sistema completo, uma automação ou quer conhecer o que já construí.
 
 ---
 

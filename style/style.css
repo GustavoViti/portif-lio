@@ -383,7 +383,7 @@ section { position: relative; padding: var(--pad-y) var(--pad-x); }
 .about-grid { display: grid; gap: clamp(48px, 7vw, 88px); }
 
 .about-text p {
-  max-width: 34ch;
+  max-width: 42ch;
   font-size: clamp(1.45rem, 3vw, 2.3rem);
   font-weight: 300;
   line-height: 1.28;
@@ -391,7 +391,6 @@ section { position: relative; padding: var(--pad-y) var(--pad-x); }
   margin-bottom: 18px;
 }
 .about-text strong { font-weight: 500; }
-.about-text p:first-child { max-width: 42ch; }
 
 .feature-list {
   display: grid;
@@ -406,6 +405,7 @@ section { position: relative; padding: var(--pad-y) var(--pad-x); }
   color: var(--on-light-2);
 }
 .feature-list svg { flex-shrink: 0; margin-top: 5px; color: var(--blue-text); }
+.feature-list strong { font-weight: 500; color: var(--on-light); }
 
 .about-stats {
   display: grid;
