@@ -183,11 +183,10 @@ section { position: relative; padding: var(--pad-y) var(--pad-x); }
   padding: 0 10px 0 22px;
 }
 
-/* A logo atual e roxa: o filtro a aproxima do azul ate a nova versao chegar */
+.nav-logo { display: block; }
 .nav-logo img {
-  height: 36px;
+  height: 34px;
   width: auto;
-  filter: hue-rotate(-62deg) saturate(0.95);
 }
 
 .nav-links { display: flex; align-items: center; gap: 4px; }
@@ -250,23 +249,15 @@ section { position: relative; padding: var(--pad-y) var(--pad-x); }
   overflow: hidden;
 }
 
-.hero-light {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 30% 46% at 72% 44%, rgba(42,155,226,0.6), rgba(42,155,226,0.16) 56%, transparent 80%);
-}
-
 .hero-content {
   position: relative;
   flex: 1;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: 32px;
 }
 
-.hero-text { align-self: center; padding-bottom: 64px; }
+.hero-text { position: relative; z-index: 1; align-self: center; padding-bottom: 64px; }
 
 .availability-badge {
   display: inline-flex;
@@ -339,24 +330,35 @@ section { position: relative; padding: var(--pad-y) var(--pad-x); }
   justify-content: center;
 }
 .hero-visual img {
-  height: min(80dvh, 660px);
+  height: min(86dvh, 740px, 62vw);
   width: auto;
   max-width: none;
-  filter: contrast(1.04) brightness(0.94) drop-shadow(0 0 34px rgba(42,155,226,0.34));
-  /* A foto tem o ombro cortado em linha reta: o fade esconde o corte */
-  -webkit-mask-image: radial-gradient(ellipse 50% 62% at 50% 38%, #000 72%, transparent 100%);
-  mask-image: radial-gradient(ellipse 50% 62% at 50% 38%, #000 72%, transparent 100%);
+  /* Funde as bordas da foto com o fundo da pagina */
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0, #000 16%),
+    linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%);
+  mask-image:
+    linear-gradient(to bottom, transparent 0, #000 16%),
+    linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
 @media (max-width: 900px) {
   .hero { padding-top: 92px; }
-  .hero-light {
-    background:
-      radial-gradient(ellipse 72% 34% at 50% 26%, rgba(42,155,226,0.6), rgba(42,155,226,0.16) 54%, transparent 78%);
-  }
-  .hero-content { grid-template-columns: 1fr; gap: 0; text-align: center; }
+  .hero-content { grid-template-columns: minmax(0, 1fr); gap: 0; text-align: center; }
   .hero-visual { order: -1; }
-  .hero-visual img { height: min(38dvh, 320px); }
+  .hero-visual img {
+    width: min(100%, 390px);
+    height: auto;
+    max-width: 100%;
+    -webkit-mask-image:
+      linear-gradient(to bottom, transparent 0, #000 12%, #000 76%, transparent 100%),
+      linear-gradient(to right, transparent 0, #000 12%, #000 88%, transparent 100%);
+    mask-image:
+      linear-gradient(to bottom, transparent 0, #000 12%, #000 76%, transparent 100%),
+      linear-gradient(to right, transparent 0, #000 12%, #000 88%, transparent 100%);
+  }
   .hero-text { padding: 12px 0 72px; }
   .name-first, .name-last { margin-inline: auto; }
   .hero-bio { margin-inline: auto; }
