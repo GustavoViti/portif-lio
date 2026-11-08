@@ -84,7 +84,7 @@ Apresentar meus produtos e projetos para quem procura um sistema completo, uma a
 
 💻 GitHub: https://github.com/GustavoViti
 
-📸 Instagram Dev: https://instagram.com/gustavo_viti_dev
+📸 Instagram Dev: https://instagram.com/gustavo__viti
 
 ---
 
