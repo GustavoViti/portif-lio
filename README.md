@@ -2,8 +2,8 @@
 
 <div align="center">
 
-### 👨‍💻 Desenvolvedor Fullstack & Mobile  
-Construindo aplicações modernas, performáticas e bem estruturadas.
+### 👨‍💻 Desenvolvedor Fullstack  
+SaaS, automações com IA e sistemas sob medida.
 
 🌐 **Acesse online:**  
 👉 https://gustavoviti.vercel.app/
@@ -52,7 +52,6 @@ HTML5 • CSS3 • JavaScript • IntersectionObserver • Flexbox • CSS Grid 
 ✔ Cards interativos com hover elegante  
 ✔ Efeito de luz premium no Hero  
 ✔ Grid responsivo para projetos  
-✔ Download de currículo  
 ✔ Links diretos para redes profissionais  
 
 ---
@@ -61,10 +60,9 @@ HTML5 • CSS3 • JavaScript • IntersectionObserver • Flexbox • CSS Grid 
 
 📦 portfolio
 ┣ 📂 assets
-┃ ┣ 📂 image
-┃ ┃ ┣ perfil.png
-┃ ┃ ┗ preview.png
-┃ ┗ currículo.docx.pdf
+┃ ┗ 📂 image
+┃   ┣ perfil.png
+┃   ┗ preview.png
 ┣ 📂 style
 ┃ ┗ style.css
 ┣ index.html
@@ -74,23 +72,13 @@ HTML5 • CSS3 • JavaScript • IntersectionObserver • Flexbox • CSS Grid 
 
 ## 🎯 Objetivo
 
-Este projeto faz parte da minha jornada para conquistar minha primeira oportunidade como Desenvolvedor Júnior.
-
-Busco:
-
-Evolução técnica constante
-
-Código limpo e organizado
-
-Boas práticas desde o início
-
-Crescimento sólido (sem atropelar etapas)
+Apresentar meus produtos e projetos para quem procura um sistema sob medida, uma automação ou quer conhecer o que já construí.
 
 ---
 
 ## 📬 Contato
 
-📧 Email: gustavoviti543@gmail.com
+📧 Email: gustavovitidev@gmail.com
 
 💼 LinkedIn: https://linkedin.com/in/gustavoviti
 

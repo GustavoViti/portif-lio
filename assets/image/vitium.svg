@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" role="img" aria-label="Vitium, assistente de IA por voz">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="46%" r="55%">
+      <stop offset="0%" stop-color="#9b00ff" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#9b00ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d9a6ff"/>
+      <stop offset="100%" stop-color="#9b00ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="440" fill="#0f0f13"/>
+  <rect width="1200" height="440" fill="url(#glow)"/>
+  <g fill="url(#bar)">
+    <rect x="334" y="182" width="12" height="40" rx="6"/>
+    <rect x="370" y="162" width="12" height="80" rx="6"/>
+    <rect x="406" y="132" width="12" height="140" rx="6"/>
+    <rect x="442" y="172" width="12" height="60" rx="6"/>
+    <rect x="478" y="112" width="12" height="180" rx="6"/>
+    <rect x="514" y="82" width="12" height="240" rx="6"/>
+    <rect x="550" y="142" width="12" height="120" rx="6"/>
+    <rect x="586" y="62" width="12" height="280" rx="6"/>
+    <rect x="622" y="122" width="12" height="160" rx="6"/>
+    <rect x="658" y="92" width="12" height="220" rx="6"/>
+    <rect x="694" y="152" width="12" height="100" rx="6"/>
+    <rect x="730" y="117" width="12" height="170" rx="6"/>
+    <rect x="766" y="167" width="12" height="70" rx="6"/>
+    <rect x="802" y="142" width="12" height="120" rx="6"/>
+    <rect x="838" y="177" width="12" height="50" rx="6"/>
+  </g>
+  <text x="600" y="402" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="600" letter-spacing="10" fill="#f0f0f9">VITIUM</text>
+</svg>
