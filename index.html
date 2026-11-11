@@ -540,14 +540,32 @@
     const sections = [...document.querySelectorAll('section[id]')];
     const navLinks = [...document.querySelectorAll('[data-nav]')];
     let lastY = window.scrollY;
+    let travel = 0;
+    const blocks = [...document.querySelectorAll('.hero, .light, .dark-block, .footer')];
     function updateNav() {
       const y = window.scrollY;
+      const delta = y - lastY;
+      lastY = y;
+      // Acumula a distancia na mesma direcao e so troca de estado depois de 60px,
+      // para a barra nao piscar quando a rolagem e lenta ou irregular
+      travel = (Math.sign(delta) === Math.sign(travel)) ? travel + delta : delta;
+      const menuOpen = hamburger.classList.contains('open');
+      if (y < 120 || menuOpen) navbar.classList.remove('hidden');
+      else if (travel > 60) navbar.classList.add('hidden');
+      else if (travel < -60) navbar.classList.remove('hidden');
       navbar.classList.toggle('scrolled', y > 24);
-      navbar.classList.toggle('hidden', y > lastY + 4 && y > 160 && !hamburger.classList.contains('open'));
-      if (Math.abs(y - lastY) > 4) lastY = y;
+
+      // Cor da barra pelo bloco que esta de fato atras dela
+      const probe = y + navbar.offsetHeight / 2;
+      const under = blocks.find(b => {
+        const top = b.getBoundingClientRect().top + y;
+        return top <= probe && top + b.offsetHeight > probe;
+      });
+      // Entre blocos aparece o fundo branco da pagina, entao conta como claro
+      navbar.classList.toggle('on-light', under ? under.classList.contains('light') : true);
+
       let current = sections[0];
       sections.forEach(s => { if (y >= s.offsetTop - 140) current = s; });
-      navbar.classList.toggle('on-light', current.classList.contains('light'));
       navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current.id));
       const contactTop = contact.getBoundingClientRect().top;
       floatBar.classList.toggle('show', y > hero.offsetHeight * 0.6 && contactTop > window.innerHeight * 0.7);
@@ -628,6 +646,12 @@
       });
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal, .split').forEach(el => observer.observe(el));
+
+    /* ── Animacoes continuas so rodam com a secao visivel ── */
+    const viewObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.statement, .goal').forEach(el => viewObserver.observe(el));
 
     /* ── Perguntas frequentes: so uma aberta por vez ── */
     const faqItems = [...document.querySelectorAll('.faq-item')];
